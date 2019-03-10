@@ -1,0 +1,64 @@
+设计类
+设计一个买车的4s
+class CarStore(object):
+	def order(self):
+		self.car = Car()
+		#类生成一个对象赋给属性
+
+通过创建对象将车名赋值给属性
+def __init__(self,typeName):
+	self.typeName = typeName
+设计方法:根据typeName创建不同对象
+def order(self,typeName):
+	if self.typeName == "伊兰特":
+		self.Car = VilanteCar()
+	elif self.typeName == "索娜妮"
+		self.Car = SuonataCar()
+
+创建对象
+storeCar = CarStore()
+storeCar.order("伊兰特")
+
+
+
+工厂模式
+产品类型变化创建对象变化
+耦合度:解耦
+
+def __init__(self):
+	self.carFactory = CarFactory
+
+def order(self,typeName):
+	self.car = self.CarFactory.creatCar(typeName)
+
+用新的类来代替判断,降低耦合
+销售生产分类,功能尽可能单一
+
+class CarStore(object):
+	def create(self):
+		pass#占个坑待继承
+	def order(self,type):
+		self.car = self.create
+基类当中的方法由子类方法实现
+重写create方法
+
+单例模式
+定义一个类:无论创建多少对象,都由一个工厂
+判断为none则创建,判断非none返回已创建
+
+def __new__(cls):
+        if cls.__instance == None:
+            #之前没创建
+            cls.__instance = object.__new__(cls) 
+        return cls.__instance
+
+控制机init方法
+
+
+
+
+
+
+
+
+

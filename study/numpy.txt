@@ -1,0 +1,14 @@
+ 基本功能
+ 	快速高效多维数组对象 Ndarry
+	对数组执行元素级计算以及直接对函数执行数学运算
+	读写硬盘基于数组数据集工具
+	线性运算\傅里叶变换\随机数生成
+	C\C++\fortran 代码集成到 python 工具
+	为Python 提供数组处理能力
+	算法传递数据的容器
+效率对比
+	三种数据结构 list\array\numpy.array
+	三种方法求和 for\sum\numpy.array
+	例子代码:extra\ pert_compare.py
+
+	

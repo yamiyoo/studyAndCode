@@ -1,0 +1,53 @@
+百度Ai平台注册ai.baidu.com
+	创建应用
+project interpretater
+包baidu-aip；aip；pyAudio；numpy
+
+form aip import AipSpeech
+form pyaudio import PyAudio, paInt16
+import numpy as np
+import wave
+
+def audio():
+	pa = PyAudio()#类实例化
+	_format = paInt16#流的格式
+	channel = 1#单声道
+	_rate = 8000#采样频率
+	num_samples = 2000#内置缓存大小
+	_time_count = 4#音频时长
+	_s = _rate / _num_sample * _time_count#录音时长
+	_buffer = []#麦克风采集内容
+
+	stream = pa.open(format=_format,channels =_channel,
+			rate=_rate,input=True,
+			frames_per_buffer=_num_samples)
+	#调用麦克风
+	print('pleace talk...')
+	while _s > 0:
+		data = stream.read(_num_samples)
+		_buffer.append(data)
+		_s -=1
+	print('end')
+	return _buffer
+
+def wav(filename,buffer):#生成wav后缀音频文件
+	wf = wave.open(filename,'wb')
+	wf.setnchannels(1)#设置声道
+	wf.setsampqidth(2)#设置宽度
+	wf.setframerate(8000)#设置频率
+	wf.writeframes(np.array(buffer))#
+	wf.close()
+
+def aip_speech(filename):
+	appid = ''
+	api_key = ''
+	secret_key=''
+#百度分配的
+	client = AipSpeech(appid,aip_key,secret_key)
+	with open(filename,'rb')as f:
+    data = f.read()
+	client.asr(data,'wav',8000,{'dev'})
+rst=audio()
+
+
+

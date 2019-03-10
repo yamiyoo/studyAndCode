@@ -1,0 +1,30 @@
+java
+.使用文本编译器
+编译一个java文件 保存为.java
+
+.编译java程序
+    javac – ddestdir  srcFile
+    javac – d .HelloWorld.java
+
+ .运行java程序
+  java  java 类名
+
+
+c
+gcc 文件名.c
+./a.out
+
+
+C++
+g++ 文件名.cpp
+./a.out
+
+
+shell
+ sh 文件名.sh 
+ 
+ chmod +x 文件名.sh 
+ ./文件名.sh
+
+ python
+ python 文件名.py

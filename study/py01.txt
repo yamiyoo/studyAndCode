@@ -1,0 +1,45 @@
+c 语言入口 main
+c 语言(编译器)汇编语言
+ Python 编译器
+#!/usr/bin/python
+  自己 定义路径
+
+ import keyword#导出 keyword 对象
+ keyword.kwlist#调用 ls 方法
+
+\n换行
+\t tab 键4个空格
+
+变量名:英文数字下划线(数字不开头)
+python 区别大小写
+关键字:import keyword
+	   keyword.kylist(显示关键字)
+		关键字不可作为变量使用
+输出print()  print(str(非字符型变量))
+	两个变量print("%d %d"%(age,name))
+raw_input("直接输出")#输入内容当做字符串直接输出
+
+ a *= 3+4-6 ==>a=a*(3+4-6)
+
+
+for 临时变量 in 循环范围
+列表:
+	变量名 = []可保存 n 个数据类型任意的元素
+	 print(变量名[元素位数])
+	遍历:
+	info = [100,"asd",3.14]
+	for temp info:
+   			print(temp)	
+	while i<len(info):
+		print(info[i])
+		i+=1
+列表操作
+	增 append其他元素或者列表添末尾 
+	   insert(添加位置,"元素")
+	   extend 添加其他列表元素
+	 		 test = ["123","456"]
+	 		 name.extend(test)
+	查 in /not in
+	   index 索引位置 count 计数
+	删 del(下标) pop(删尾) remove(删值)
+

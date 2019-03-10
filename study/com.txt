@@ -1,0 +1,143 @@
+命令
+ls：显示当前文件下所有内容
+ls 绝对路径可直接跳转  ls ／bin
+-a隐藏文件  -l 列表显示 -h文件大小
+*.后缀 *.*  *.t?  
+*任意字符，也可表无 ？占一位【xn】选一个【a-f】范围内选一个）
+cd：切换目录change direction 
+pwd：printf work direction（绝对路径）
+cd..:上一个路径 cd -回跳路径
+command 【】（）
+clear
+绝对路径：从根目录为起点，带／
+相对路径：相对于当前目录的其他路径。
+.当前路径..上一个路径
+tab 自动补全
+touch 创建文件（可以随意加后缀）
+重定向(更改输出方向)
+ls > test.txt(至新文件test.txt,或被清空的旧文件)
+ls >> test.txt(不清空旧文件)
+more 文件名，终端上显示内容 
+|:管道，左写右读 ls -alh | more
+mkdir创建目录 -p创建目录
+tree显示 
+rmdir删除空目录
+rm 彻底删除 -r删除文件夹（嵌套文件夹递归删除）
+ -i询问删除 -f强制删除
+ln：创建链接（创建快捷方式）ln 源文件 链接文件
+显示方式和其他文件一样
+创建软连接ln -s 源文件 链接文件
+源文件删除链接文件存在
+区别：当源文件删除，硬链接可打开，软链接丢失
+文件权限 该文件内容有几个文件名
+ gedit编译文件
+ cat查看文件内容：
+   将一个文件内容复制到另一个文件cat文件>文件
+   cat文件1文件2：逆序查看所有文件内容
+grep -n行号 -i忽略大小写 -v取反内容
+  ‘’显示所有单引号内内容
+  ‘【】’多内容二选一
+帮助信息ls --help     man（manual)
+history查看历史命令
+find从指定路径找文件
+  -name "[A-Z]*"大写为首"*x*"首尾或中间含x
+  -size -2m
+copy文件
+cp 文件1 文件名
+  -v显示进度 -i交互copy -f强制 -a任何东西都复制
+  -r文件夹整体拷贝
+mv移动 mv a/d mv 文件名1文件名2（重命名）
+tar归档管理（备份） tar使用格式 tar[参数]打包文件。tar 文件
+  -cvf常用格式。-cvf 文件名 解包
+gzip直接压缩，可以把包再次压缩压到最小
+ -r压缩 -d解压
+byte字节 k 1024b m 1024k g 1024m t 1024t p 1024t
+压缩：打包tar -cvf.tar * 压缩gzip x.tar
+解压：解压gzip -d x.tar 解包tar -xvf x.tar
+一步到位：tar -zcvf test.tar.gz *
+          tar -zxvf test.tar.gz
+bzip2(另一套范法)
+	      tar -jcvf test.tar.bz2 *
+		  tar -jxvf test.tar.bz2 
+windows :zip[-r]目标文件（无扩展名) 源文件
+         unzip[-d] ./路径 解压文件.zip
+which 查看文件路径
+用户权限管理
+  Unix Linux：root不受权限管理
+  多用户同时管理
+ifconfig查看计算机信息 ifconfig | '内容'查找关键信息
+en网卡（windows中ipconfig）
+
+网络
+  ping ip地址：测试网络连接是否正常
+shh通过远程登录协议
+  ssh 用户@服务器ip地址：远程登录（新用户创建）
+who:当前登陆用户登录信息
+  -q显示用户数-u其他用户
+  whoami当前用户名 exit退出账户
+后端为前端提供数据服务的叫做后端
+添加用户useradd（命令） adduser（链接）
+   sudo useradd 名字 -m -d ／home/名字
+   -m（自动创建相应家目录）-d（制定目录名为名字）
+   sudo（权限不够permission denied时ctl+a回到句首添加sudo）
+   -g指定组（当没指定时，创建以用户名命名的组）
+sudo passwd 用户
+su 切换账户 （账户之间切换后exit则会按需回切）
+su - 另一个用户 则它路径变成该用户家目录
+userdel 用户名（家目录存在）部分用户没用删除权限
+userdel -r 用户名（家目录不存在）
+当用户没有root时：激活root账户sudo passwd root
+sudo -s 直接切换到root权限
+$普通用户#管理员权限
+用户组：
+  cat ／etc／group
+在命令行：
+    dscl localhost
+进入组目录
+    cd /Local/Default/Groups
+使用ls 你就可以看到所有的group，  /Local/Default/Users 可以看到所有的用户
+append groupname GroupMembership username
+groupname是你想添加的组， username是你的用户名
+删除delete groupname GroupMembership username
+groupadd XY添加用户组XY
+groupdel XY删除用户组XY（group操作需要权限，需要root活着sudo）
+usermod -g 用户组 用户名
+usermod -a -g其他用户组（同属于多个组）
+用户分组原因：部分用户组无法切换sudo
+赋予sudo：sudo usermod -a -G adm或sudo 用户名
+  -g指定主要用户组
+  -G配合-a完成添加到其他组
+创建文件夹后会有默认两个键.和..链接为2
+d rwx(自己权限)rwx(同组权限)rwx(其他人权限)
+	u（user）g（group）o（other）a（all）
+chmod u+x test.txt(只会修改文件夹权限)
+./文件名：执行当前文件
+rwx：111:7
+-R（递归修改文件夹下所有权限）
+chown修改所有者 chgrp改所属组
+cal日历date时间
+date+月日时间年  设置时间
+网络时间协议ATP核对当前电脑及时间
+date '+时间占位符'
+%Y2016	 %y16	%m 月%d日 %H%M%S时分秒
+ps查看当前运行程序情况(相当于任务管理器)
+ps -aux（显示全部运行信息）
+PID进程号
+top动态显示当前系统占用资源情况
+退出Q （ctrl +C／D/Z）
+kill + PID
+kill -9 PID(强杀)
+rebooot重启操作系统
+shutdown -r now重启
+shutdown -h now立刻关机
+shutdowm -h 20:25时间点关机
+shutdown -h +10十分钟后关机
+init 0关机
+init 6重启
+df检查当前磁盘情况
+  -a显示所有 -m以1024字节为单位（挂载点）
+  -t显示各指定文件系统的磁盘空间使用 -r各文件系统 
+du检测目录所占磁盘空间
+  -a递归显示所有目录文件 -h单位表示
+  -b以字节为单位 
+

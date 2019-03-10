@@ -1,0 +1,37 @@
+绘图。py
+雷达图
+import pygal#svg图库表 pip insatll pygal
+#调用Radar类
+radar_chart= pygal.Radar（fill=True）
+  填充
+#添加雷达图标题
+radar_chart.title = '雷达图分析'
+#雷达图各定点含义
+radar_chart.x_labels = ['属性1','属性2','属性3','属性4','属性5']
+radar_chart.add('姓名',[分值1,分值2,分值3,分值4,分值5])
+radar_chart.render_to_file('filename.svg')
+#生成一个svg文件，打开是雷达图
+#根据数据生产
+
+
+爬虫：1.url（目标）2.模拟浏览器请求资源（伪装）
+      3.解析网页（检查内容）4.保存数据（记录）
+import requests #第三方库pipHTTP请求库（伪装）
+import json 
+import jsonpath #对于json文件信息提取库
+                #第三方需要自己去安装
+url = 'http......'
+header={
+   'userAgent':'....''
+}
+data = 参数#携带参数
+#请求userAgent用户代理得到通行证
+response = requests.get(url,headers=header，data=data)
+#request伪装请求到资源
+html = response.text#网页源代码以文本的形式
+response.encoding = 'utf-8'#
+print（html）
+#以上为模拟浏览器请求资源
+ 
+unicodest = json.loads(html)
+#json形式的字符串转换成python形似

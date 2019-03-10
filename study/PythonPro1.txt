@@ -1,0 +1,22 @@
+模块join，tkinter，requests
+from tjinter import *
+from tkinter import messagebox
+
+master = TK() #类的实例化，master是一个对象
+
+master.mainloop（）#能够直接展示图形界面
+#思路构建框架；展示内容；输入提交；显示结果
+master.title('软件标题')
+master.geometry（'200x200+416+325'）#设置长宽
+#参数必须是字符串所以x是乘
+#+表示定位坐标
+laber1 = Label(master,text='输入',font=（'GB2312',18），fg='blue')
+laber.grid(row=0,column=0)#调用实现,设置网格
+Entry(master)
+Entry.grid(row=0,column=1)
+#同法制作第二行
+Button（master，部分设置）
+button.grid（row=2，column=1）
+#括号里面：command=master.quit退出
+     command=master.
+     sticky=W  sticky=E

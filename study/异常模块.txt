@@ -1,0 +1,72 @@
+异常处理
+捕获异常 try except
+try:
+	不确定代码
+expect 异常名字1:
+	异常处理
+expect 异常名字2:
+	异常处理
+
+捕获多个异常
+except(异常1,异常2) as result:
+
+捕获所有异常
+
+except Exception as result:
+	处理方式
+	print(result)
+except:
+	处理方法其他
+else:
+	无异常处理方式
+finally:
+	无异常最后执行
+
+由raise引发一个异常.异常对象必须有名字,且是Error或Exception类的子类
+
+raise 对象(参数)
+
+抛出自定义对象
+class ShortInputExceptions(Exception):
+	def __init__():
+		属性
+try:
+	if 出现异常条件:
+		raise ShortInputExceptions()
+		#创建异常对象
+except ROFError:
+#结束标记
+except ShortInputExceptions as result:
+#异常内容
+else:
+#无异常
+
+重新抛出异常 raise会被系统捕捉
+
+
+定义自己的模块
+ import .py文件
+print(__main__)
+自己执行__main__   调用模块,显示模块名字
+
+测试:
+if __mian__ = "__main__":
+	print(__main__)
+	test()
+
+import 模块
+from 模块 import *
+
+定位模块4部
+
+python安装路径
+  import os
+  os.__file__
+cd到路径里
+
+sys.path.insert(0,"路径")
+
+
+
+
+

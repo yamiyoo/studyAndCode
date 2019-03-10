@@ -1,0 +1,83 @@
+def 函数名():
+	XXX
+
+定义一个类:
+
+class 类名:
+	xxxx
+
+类名(大驼峰,每个字母大写)
+
+
+#cat类
+class Cat:
+	#属性
+
+#创建完一个对象后立马自动调用,单独一个self用来初始化,不接受传参
+	def__init__(self):
+		print("haahahahaha")
+
+	#方法
+	def eat(self):
+		print("____吃___")
+	def drink(self):
+		print("****喝****")
+
+#第二种方法属性获取
+	def printInfo(self):
+		print(self.tell)
+
+
+
+#cat对象
+xiaohuamao = Cat()
+xiaohuamao.eat()
+xiaohuamao.drink()
+#通过对象添加属性
+xiaohuamao.color = "huase"
+xioahuamao.weight = 5
+xiaohuamao.tell = "有"
+
+#获取属性
+a = xiaohuamao.color
+print(a)
+print(xiaohuamao.weigth)
+#如果没有属性,还强制访问则产生异常
+print(xiaohuamao.high)
+
+#第二种方法获取属性
+xiaohuamao.printInfo()
+
+
+给一个对象添加属性方法:
+对象名.新属性名 = 值
+
+获取属性方法:
+1.对象.属性
+2.定义获取函数,中间使用self.属性,执行函数
+
+
+#用法__init__用来添加属性
+	def__init__(self,newColoer,newWeight,newTell):
+		self.coloer = newColoer
+		self.weight = newWeight
+		self.tell = newTell
+
+	def printInfo(self):
+		print(self.tell)
+		print(self.weight)
+		print(self.coloer)
+
+xiaohuamao = Cat("huase",5,"有")
+xiaohuamao.printInfo()
+
+
+
+魔法方法
+__init__():
+__str__():
+
+
+面向对象思想
+ 对象:属性,方法
+ 	根据对象调用方法中参数,通过方法修改变量
